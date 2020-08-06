@@ -1,0 +1,28 @@
+<!-- Home html -->
+
+{% extends "pages/index.html" %} {% block content %}
+
+<!-- Below is the template for your home-page where the variable "home" is fed to the tag <h1>, <p>, <amp-youtube> etc -->
+
+<section class="header11 cid-qMPCctt0uS mbr-fullscreen" id="header11-0"
+    style="background-image: url({{homeData.hero_banner.banner_image.url}});">
+    <div class="mbr-overlay"></div>
+    <div class="container">
+        <h1 class="mbr-section-title mbr-fonts-style mbr-white align-center mbr-bold display-1">
+            <div style="font-size: 70px;">{{homeData.hero_banner.title}}</div>
+        </h1>
+    </div>
+</section>
+
+<section class="features2 mbr-section cid-qMPCzM7s2W" id="features2-1">
+    <div class="container">
+        <div class="mbr-row mbr-justify-content-center">
+            <div>
+                <h1 style="font-size: 40px;">{{homeData.introduction_section.title}}</h1>
+                <p>{{homeData.introduction_section.description}}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

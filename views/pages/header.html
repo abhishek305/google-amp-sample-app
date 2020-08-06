@@ -1,0 +1,53 @@
+<!-- Header/nav bar -->
+
+<!-- Here the variable header is fed into template which consist the data fetched from contentstack -->
+
+<amp-sidebar id="sidebar" class="cid-qMPDXEs8Ea" layout="nodisplay" side="right">
+  <div class="builder-sidebar" id="builder-sidebar">
+    <button on="tap:sidebar.close" class="close-sidebar">
+      <span></span>
+      <span></span>
+    </button>
+    {% for menuItems in header.navigation_group.navigation_option %}
+    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+      <li class="nav-item">
+        <a class="nav-link link text-white display-7" href="{{menuItems.link}}">{{menuItems.title}}</a>
+      </li>
+    </ul>
+    {% endfor %}
+  </div>
+</amp-sidebar>
+
+<section class="menu horizontal-menu cid-qMPDXEs8Ea" id="menu1-7">
+  <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+    <div class="navbar-brand">
+      <span> <a href="/">
+          <amp-img src="{{header.brand_name.logo.url}}" alt="AMP Marketing website template" width="40" height="40">
+
+          </amp-img>
+        </a></span><span style="padding-left: 7px;" class="navbar-caption-wrap">
+        <a style="font-weight: bold;" class="navbar-caption text-white display-5"
+          href="/">{{header.brand_name.title}}</a></span>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      {% for menuItems in header.navigation_group.navigation_option %}
+
+      <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+        <li class="nav-item">
+          <a class="nav-link link text-white display-7" style="font-weight: bold;"
+            href="{{menuItems.link}}">{{menuItems.title}}</a>
+        </li>
+      </ul>
+      {% endfor %}
+    </div>
+  </nav>
+
+  <!-- AMP plug -->
+
+  <button on="tap:sidebar.toggle" class="ampstart-btn hamburger sticky-but">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</section>
