@@ -12,6 +12,6 @@ module.exports = {
     headerContentTypeUid: 'header_amp',
     footerContentTypeUid: 'footer_amp',
     homeContentTypeUid: 'home_amp',
-    blogContentTypeUid: 'blogs_amp',
+    blogContentTypeUid: 'blogs_amp' ,
   },
 };
