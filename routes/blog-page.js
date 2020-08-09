@@ -1,3 +1,5 @@
+// Below code is the router method for an individual blog page`
+
 /**
  * Module dependencies.
  */
@@ -12,7 +14,7 @@ const configVars = require('../config');
 
 const Stack = Contentstack.Stack(configVars.apiKey, configVars.accessToken, configVars.env);
 
-// Below middleware will render the blog list page
+// Below router method will fetch & render a specific blog from modular block i.e blog_page
 
 router.get('/', (req, res) => {
   Stack.ContentType(configVars.contentTypeUid.blogContentTypeUid).Query()
@@ -20,13 +22,14 @@ router.get('/', (req, res) => {
     .toJSON()
     .find()
     .then((result) => {
-      const blogList = result[0].find((blog) => blog.url === '/blogs');
-      res.render('pages/blogs.html', { blogData: blogList });
+      const blogContent = result[0].find((blog) => `/blogs${blog.url}` === `${req.originalUrl}`);
+      if (blogContent) {
+        res.render('pages/blog-page.html', { blogDetail: blogContent });
+      }
     })
     .catch((err) => {
       console.log(err);
     });
 });
-
 
 module.exports = router;

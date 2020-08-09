@@ -1,6 +1,6 @@
 /**
  * Module dependencies.
- */
+ */ 
 
 const express = require('express');
 
@@ -12,7 +12,7 @@ const configVars = require('../config');
 
 const Stack = Contentstack.Stack(configVars.apiKey, configVars.accessToken, configVars.env);
 
-// Below router method will fetch & render a specific blog
+// Below middleware will render the blog list page
 
 router.get('/', (req, res) => {
   Stack.ContentType(configVars.contentTypeUid.blogContentTypeUid).Query()
@@ -20,14 +20,13 @@ router.get('/', (req, res) => {
     .toJSON()
     .find()
     .then((result) => {
-      const blogContent = result[0].find((blog) => `/blogs${blog.url}` === `${req.originalUrl}`);
-      if (blogContent) {
-        res.render('pages/blogpage.html', { blogDetail: blogContent });
-      }
+      const blogList = result[0].find((blog) => blog.url === '/blogs');
+      res.render('pages/blog-list.html', { blogData: blogList });
     })
     .catch((err) => {
       console.log(err);
     });
 });
+
 
 module.exports = router;
