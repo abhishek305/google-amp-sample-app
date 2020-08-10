@@ -1,6 +1,6 @@
 /**
  *
- * Below provide your stack credentials for performing api calls using contentstack SDK
+ * Below provide your stack credentials for performing sdk/api calls using Contentstack SDK
  */
 
 module.exports = {
@@ -9,9 +9,9 @@ module.exports = {
   accessToken: 'cs037658fd3f355e61abdec712', // delivery token
   env: 'development', // publishing environment
   contentTypeUid: {
-    headerContentTypeUid: 'header_amp',
-    footerContentTypeUid: 'footer_amp',
-    homeContentTypeUid: 'home_amp',
-    blogContentTypeUid: 'blogs_amp' ,
+    headerContentTypeUid: 'header_amp', // provide content-type uid for header
+    footerContentTypeUid: 'footer_amp', // provide content-type uid for footer
+    homeContentTypeUid: 'home_amp', // provide content-type uid for home page
+    blogContentTypeUid: 'blogs_amp', // provide content-type uid for blogs
   },
 };
