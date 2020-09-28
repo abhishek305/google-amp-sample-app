@@ -5,13 +5,13 @@
 
 module.exports = {
   port: 4000,
-  apiKey: 'bltff856f3f034d89c7', // your apiKey
-  accessToken: 'cs037658fd3f355e61abdec712', // delivery token
-  env: 'development', // publishing environment
+  apiKey: 'bltd6eede0fe04bdae1', // your apiKey
+  accessToken: 'cs7802575928b4fd4a266f8a68', // delivery token
+  env: 'production', // publishing environment
   contentTypeUid: {
-    headerContentTypeUid: 'header_amp', // provide content-type uid for header
-    footerContentTypeUid: 'footer_amp', // provide content-type uid for footer
-    homeContentTypeUid: 'home_amp', // provide content-type uid for home page
-    blogContentTypeUid: 'blogs_amp', // provide content-type uid for blogs
+    headerContentTypeUid: 'header', // provide content-type uid for header
+    footerContentTypeUid: 'footer', // provide content-type uid for footer
+    homeContentTypeUid: 'home', // provide content-type uid for home page
+    blogContentTypeUid: 'blogs', // provide content-type uid for blogs
   },
 };
